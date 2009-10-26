@@ -1,0 +1,29 @@
+midibeep.rb: Convert a Standard MIDI (.mid) file into Spectrum BEEP statements
+http://github.com/gasman/midibeep/
+
+Installation / requirements
+---------------------------
+You will need Ruby, and midilib:
+    gem install midilib
+
+You probably also need something to translate BASIC text files into something
+that can be loaded into a Spectrum; I use zmakebas
+    http://www.svgalib.org/rus/zmakebas.html
+but for Windows, BASin probably works well:
+    http://www.worldofspectrum.org/forums/showthread.php?t=20950
+
+Usage
+-----
+    ruby midibeep.rb my_midi_file.mid
+will dump the BEEPs to standard output;
+    ruby midibeep.rb my_midi_file.mid > my_program.txt
+will send the output to somewhere more useful. Or, for command-line-fu fans:
+    ruby midibeep.rb my_midi_file.mid | 
+
+Limitations
+-----------
+- The algorithm for condensing down to one channel is pretty crude. Don't
+  expect good results if you feed it a full orchestral score.
+- The output format is a memory hog. Expect to get about 1500 lines into 48K.
+
+Matt Westcott <matt@west.co.tt> - http://matt.west.co.tt/
