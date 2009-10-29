@@ -18,7 +18,7 @@ Usage
 will dump the BEEPs to standard output;
     ruby midibeep.rb my_midi_file.mid > my_program.txt
 will send the output to somewhere more useful. Or, for command-line-fu fans:
-    ruby midibeep.rb my_midi_file.mid | 
+    ruby midibeep.rb my_midi_file.mid | zmakebas -o my_program.tap
 
 Limitations
 -----------
